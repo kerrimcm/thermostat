@@ -1,5 +1,9 @@
 class Thermostat {
+  constructor() {
+    this._temperature = 20
+  };
+  
   temperature() {
-    return 20;
+    return this._temperature;
   };
 };
