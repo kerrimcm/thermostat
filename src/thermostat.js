@@ -29,4 +29,8 @@ class Thermostat {
   isPowerSavingModeOn() {
     return this.powerSavingMode === true;
   }
+
+  switchOffPowerSavingMode() {
+    return this.powerSavingMode = false;
+  }
 };
