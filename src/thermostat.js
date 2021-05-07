@@ -47,6 +47,8 @@ class Thermostat {
   energyUsage() {
     if (this.temperature < this.MEDIUM_ENERGY_USAGE_LIMIT) {
       return 'low-usage';
+    } else {
+      return 'medium-usage';
     }
   }
 
