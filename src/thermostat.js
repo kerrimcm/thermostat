@@ -41,8 +41,9 @@ class Thermostat {
   isMaximumTemp() {
     if (this.isPowerSavingModeOn() === false) {
       return this.temperature === this.MAX_LIMIT_PSM_OFF;
+    } else if (this.isPowerSavingModeOn() === true) {
+      return this.temperature === this.MAX_LIMIT_PSM_ON;
     }
-    return this.temperature === this.MAX_LIMIT_PSM_ON;
   }
 
   energyUsage() {
@@ -64,6 +65,9 @@ class Thermostat {
   }
 
   switchOnPowerSavingMode() {
+    if (this.temperature >= this.MAX_LIMIT_PSM_OFF) {
+      this.temperature = this.MAX_LIMIT_PSM_ON;
+    }
     return this.powerSavingMode = true;
   }
 };
