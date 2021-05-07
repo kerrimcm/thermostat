@@ -36,4 +36,11 @@ describe ('Thermostat', () => {
     thermostat.switchOffPowerSavingMode();
     expect(thermostat.isPowerSavingModeOn()).toBe(false);
   });
+
+  it('can switch power saving mode back on', function() {
+    thermostat.switchOffPowerSavingMode();
+    expect(thermostat.isPowerSavingModeOn()).toBe(false);
+    thermostat.switchOnPowerSavingMode();
+    expect(thermostat.isPowerSavingModeOn()).toBe(true);
+  });
 });
