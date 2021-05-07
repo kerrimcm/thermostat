@@ -1,3 +1,5 @@
+'use strict';
+
 describe ('Thermostat', () => {
   let thermostat;
 
@@ -6,6 +8,6 @@ describe ('Thermostat', () => {
   });
 
   it('starts at 20 degrees', function() {
-    expect(thermostat.temperature()).toEqual(20);
+    expect(thermostat.getCurrentTemp()).toEqual(20);
   });
 });
