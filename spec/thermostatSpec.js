@@ -62,4 +62,12 @@ describe ('Thermostat', () => {
       expect(thermostat.getCurrentTemp()).toEqual(32);
     });
   });
+
+  it('can be reset back to 20 degrees', function() {
+    for (let i = 0; i < 6; i++) {
+      thermostat.up();
+    }
+    thermostat.resetTemperature();
+    expect(thermostat.getCurrentTemp()).toEqual(20);
+  });
 });
