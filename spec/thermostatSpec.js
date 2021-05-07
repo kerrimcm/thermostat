@@ -86,5 +86,14 @@ describe ('Thermostat', () => {
         expect(thermostat.energyUsage()).toEqual('medium-usage');
       });
     });
+
+    describe('when the temperature is above 25', function() {
+      it('is considered high-usage', function() {
+        for (let i = 0; i < 6; i++) {
+          thermostat.up();
+        }
+        expect(thermostat.energyUsage()).toEqual('high-usage');
+      });
+    });
   });
 });
